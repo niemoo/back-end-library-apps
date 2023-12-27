@@ -7,6 +7,9 @@ const port = 3300;
 
 app.use(bodyParser.json());
 
+const appRoute = require('./src/routes/route-library');
+app.use('/', appRoute);
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
