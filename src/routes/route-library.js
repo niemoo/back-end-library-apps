@@ -7,7 +7,7 @@ const { users } = require('../controllers/index');
 router.get('/', users.getAllDataUsers);
 
 // CHECK IF USERNAME EXISTS OR NOT
-router.get('/users/:username', users.getDataUsersByID);
+router.post('/login', users.checkDataUsersByUsername);
 
 // REGISTER IN SIGN UP
 router.post('/register', users.addDataUsers);
