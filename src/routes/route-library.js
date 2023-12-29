@@ -12,6 +12,10 @@ router.post('/login', users.checkDataUsersByUsername);
 // REGISTER IN SIGN UP
 router.post('/register', users.addDataUsers);
 
+// UPDATA DATA USERS
 router.put('/users/update', users.updateDataUsers);
+
+// DELETE DATA USERS
+router.delete('/users/delete/:users_id', users.deleteDataUsers);
 
 module.exports = router;

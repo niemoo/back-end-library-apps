@@ -1,3 +1,4 @@
+const { users } = require('.');
 const db = require('../configs/database');
 const response = require('../configs/response');
 
@@ -91,6 +92,21 @@ module.exports = {
       }
 
       response(200, result, 'Successfully updated users', res);
+    });
+  },
+
+  deleteDataUsers: (req, res) => {
+    const { users_id } = req.params;
+
+    const sql = 'delete from users where users_id = ?';
+
+    db.query(sql, [users_id], (err, result) => {
+      if (err) {
+        response(500, err, 'Error deleting users', res);
+        return;
+      }
+
+      response(200, result, 'Successfully deleted users', res);
     });
   },
 };
