@@ -77,4 +77,20 @@ module.exports = {
       });
     });
   },
+
+  // UPDATE USERS
+  updateDataUsers: (req, res) => {
+    const { users_id, email, username, name, password } = req.body;
+
+    const sql = 'update users set email = ?, username = ?, name = ?, password = ? where users_id = ?';
+
+    db.query(sql, [email, username, name, password, users_id], (err, result) => {
+      if (err) {
+        response(500, err, err.message, res);
+        return;
+      }
+
+      response(200, result, 'Successfully updated users', res);
+    });
+  },
 };

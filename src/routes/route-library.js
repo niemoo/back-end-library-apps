@@ -12,4 +12,6 @@ router.post('/login', users.checkDataUsersByUsername);
 // REGISTER IN SIGN UP
 router.post('/register', users.addDataUsers);
 
+router.put('/users/update', users.updateDataUsers);
+
 module.exports = router;
