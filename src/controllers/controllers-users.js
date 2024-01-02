@@ -1,4 +1,3 @@
-const { users } = require('.');
 const db = require('../configs/database');
 const response = require('../configs/response');
 
